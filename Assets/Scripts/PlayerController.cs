@@ -4,15 +4,17 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
 	private Rigidbody _rb;
-	public GameObject backWall;
+	private Collider _pc;
+	public Collider BackWall;
 	private Vector3 _backWallSize;
 	private Vector3 _playerSize;
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
-		_backWallSize = backWall.GetComponent<Collider>().bounds.size;
-		_playerSize = GetComponent<Collider>().bounds.size;
+		_backWallSize = BackWall.bounds.size;
+		_rb = GetComponent<Rigidbody>();
+		_pc = GetComponent<Collider>();
+		_playerSize = _pc.bounds.size;
     }
 
 	void FixedUpdate()
