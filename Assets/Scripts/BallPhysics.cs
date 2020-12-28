@@ -7,13 +7,16 @@ public class BallPhysics : MonoBehaviour {
 	private Rigidbody _rb;
     private bool inMotion = false;
 	private bool mouseDown = false;
+    private Vector3 _initialPosition;
 
-	void Start () {
+    void Start () {
 		_rb = GetComponent<Rigidbody>();
+		_initialPosition = transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		// TODO: make starting the game player specific for multiplayer
 		if (Input.GetMouseButton (0)) {
 			mouseDown = true;
 		}
@@ -41,5 +44,13 @@ public class BallPhysics : MonoBehaviour {
 			_rb.velocity = newVelocity;
 			Debug.LogFormat("Velocity changed from {0} to {1}", oldVelocity, newVelocity);
 		}
+	}
+
+	public void Reset()
+	{
+		transform.SetPositionAndRotation(_initialPosition, Quaternion.identity);
+		_rb.velocity = Vector3.zero;
+		_rb.angularVelocity = Vector3.zero;
+		inMotion = false;
 	}
 }
