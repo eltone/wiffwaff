@@ -153,6 +153,7 @@ MonoBehaviour:
   PlayerOne: {fileID: 774261412}
   PlayerTwo: {fileID: 1742667337}
   Ball: {fileID: 406817243}
+  BallResetWaitTime: 0.2
 --- !u!4 &8080700
 Transform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class Game : MonoBehaviour
     public PlayerController PlayerTwo;
     public BallPhysics Ball;
 
+    public float BallResetWaitTime;
+
     void Awake()
     {
         var players = FindObjectsOfType<PlayerController>();
@@ -29,6 +31,6 @@ public class Game : MonoBehaviour
     {
         PlayerOne.Reset();
         PlayerTwo.Reset();
-        Ball.Reset();
+        StartCoroutine(Ball.Reset(BallResetWaitTime));
     }
 }

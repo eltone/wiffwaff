@@ -14,7 +14,6 @@ public class BallPhysics : MonoBehaviour {
 		_initialPosition = transform.position;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		// TODO: make starting the game player specific for multiplayer
 		if (Input.GetMouseButton (0)) {
@@ -46,11 +45,14 @@ public class BallPhysics : MonoBehaviour {
 		}
 	}
 
-	public void Reset()
+	public IEnumerator Reset(float time)
 	{
+		enabled = false;
+		yield return new WaitForSeconds(time);
 		transform.SetPositionAndRotation(_initialPosition, Quaternion.identity);
 		_rb.velocity = Vector3.zero;
 		_rb.angularVelocity = Vector3.zero;
 		inMotion = false;
+		enabled = true;
 	}
 }

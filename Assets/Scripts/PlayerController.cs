@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleGoalScored(string name)
     {
-		Debug.Log(string.Format("Handle goal scored for player {0}", this.name));
+		Debug.Log(string.Format("Handle goal scored against player {0}", this.name));
     }
 
     protected virtual void Start()
