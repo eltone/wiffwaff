@@ -7,6 +7,13 @@
         {
             "name": "Unity Editor",
             "type": "unity",
+            "path": "/c:/Users/tony/Code/wiffwaff/Library/EditorInstance.json",
+            "request": "launch"
+        },
+        {
+            "name": "Unity Editor Clone",
+            "type": "unity",
+            "path": "/c:/Users/tony/Code/wiffwaff_clone/Library/EditorInstance.json",
             "request": "launch"
         },
         {
@@ -31,6 +38,21 @@
         },
         {
             "name": "Android Player",
+            "type": "unity",
+            "request": "launch"
+        },
+        {
+            "name": "Xbox One Player",
+            "type": "unity",
+            "request": "launch"
+        },
+        {
+            "name": "PS4 Player",
+            "type": "unity",
+            "request": "launch"
+        },
+        {
+            "name": "SwitchPlayer",
             "type": "unity",
             "request": "launch"
         }
