@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// TODO: split this into multiple components for movement, collision effects, scoring etc
 public class PlayerController : MonoBehaviour
 {
-	public GameObject LeftWall;
-	public GameObject BottomWall;
 	public Goal Goal;
 	protected Rigidbody Rigidbody;
 	private Collider _pc;
@@ -23,9 +22,8 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Start()
     {
-		var leftHeight = LeftWall.GetComponent<Renderer>().bounds.size.y;
-		var bottomWidth = BottomWall.GetComponent<Renderer>().bounds.size.x;
-		_backWallSize = new Vector3(bottomWidth, leftHeight, 0);
+		var goalCollider = Goal.GetComponent<Collider>();
+		_backWallSize = goalCollider.bounds.size;
 		Rigidbody = GetComponent<Rigidbody>();
 		_pc = GetComponent<Collider>();
 		_playerSize = _pc.bounds.size;
